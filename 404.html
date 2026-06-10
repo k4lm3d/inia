@@ -209,7 +209,7 @@
             color: var(--accent);
             padding: 14px 30px;
             border-radius: 50px;
-            border: 1px solid var(--accent);
+            border: 3px solid var(--accent);
             transition: var(--transition);
         }
 
@@ -380,7 +380,24 @@
             }
         }
 
-        .error-code { color: var(--text-muted); padding-top: 0.5rem; }
+        /* Custom */
+        .nav404 {
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+        }
+        
+        .error-code {
+            color: var(--text-muted);
+            padding-top: 1rem;
+            font-size: 15px;
+        }
+
+        .icon404 {
+            font-size: 50px;
+            color: var(--text);
+            padding-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -412,13 +429,15 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container hero-content">
-            <center><i data-lucide="search-x" style="font-size: 20px; color: var(--text);"></i></center>
+            <center><i data-lucide="search-x" class="icon404"></i></center>
             <h1>404</h1>
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
-            <a href="/" class="btn" style="margin-right: 1rem !important;">Return Home</a>
-            <a onclick="history.back();" class="outlined-btn">Go Back</a>
-            <p class="error-code"><small>Error Code: INIA-404</small></p>
+            <div class="nav404">
+                <a href="/" class="btn" style="flex:1;">Return Home</a>
+                <button onclick="history.back();" class="outlined-btn">Go Back</button>
+            </div>
+            <small class="error-code">Error Code: INI-404</small>
         </div>
     </section>
 
