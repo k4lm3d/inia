@@ -381,25 +381,27 @@
         }
 
         /* Custom */
-        .nav404 {
+        .redirect-btn {
             display: flex;
             justify-content: center;
             gap: 10px;
         }
 
-        .nav404-btn {
+        .redirect-btn a,
+        .redirect-btn button {
             font-size: 18px;
-            width: 150px;
+            width: 100px;
             flex: 1;
         }
         
         .error-code {
             color: var(--text-muted);
-            padding-top: 1rem;
+            padding-top: 3rem;
             font-size: 15px;
+            opacity: 50%;
         }
 
-        .icon404 {
+        .not-found-icon {
             font-size: 30px;
             color: var(--text);
             padding-top: 1.5rem;
@@ -435,15 +437,15 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container hero-content">
-            <center><i data-lucide="search-x" class="icon404"></i></center>
+            <center class="not-found-icon"><i data-lucide="search-x"></i></center>
             <h1>404</h1>
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
-            <div class="nav404">
-                <a href="/" class="btn nav404-btn">Return Home</a>
-                <button onclick="history.back();" class="outlined-btn nav404-btn"">Go Back</button>
+            <div class="redirect-btn">
+                <a href="/">Return Home</a>
+                <button onclick="history.back();" class="outlined-btn">Go Back</button>
             </div>
-            <small class="error-code">Error Code: INI-404</small>
+            <small class="error-code">Error Code: ERROR404</small>
         </div>
     </section>
 
