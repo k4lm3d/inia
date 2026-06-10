@@ -205,16 +205,16 @@
 
         .outlined-btn {
             display: inline-block;
-            background: var(--accent-dark);
-            color: white;
+            background: transparent;
+            color: var(--accent);
             padding: 14px 30px;
             border-radius: 50px;
+            border: 1px solid var(--accent);
             transition: var(--transition);
-            border-color: var(--ascent);
-            border-style: solid;
         }
 
         .outlined-btn:hover {
+            color: white;
             background: var(--accent);
             transform: translateY(-2px);
         }
@@ -415,7 +415,8 @@
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
             <a href="/" class="btn">Return Home</a>
-            <button onclick="history.back()" class="outlined-btn">Go Back</button>
+            <button onclick="history.back();" class="outlined-btn">Go Back</button>
+            <p>Error Code: INIA-404</p>
         </div>
     </section>
 
