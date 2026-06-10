@@ -380,15 +380,15 @@
             }
         }
 
-        /* Custom */
+        /* Custom 404 */
         .redirect-btn {
             display: flex;
             justify-content: center;
             gap: 10px;
         }
 
-        .redirect-btn a,
-        .redirect-btn button {
+        .redirect-btn .returnhome,
+        .redirect-btn .goback {
             font-size: 18px;
             width: 100px;
             flex: 1;
@@ -442,8 +442,8 @@
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
             <div class="redirect-btn">
-                <a href="/">Return Home</a>
-                <button onclick="history.back();" class="outlined-btn">Go Back</button>
+                <a href="/" class="returnhome">Return Home</a>
+                <button onclick="history.back();" class="goback outlined-btn">Go Back</button>
             </div>
             <small class="error-code">Error Code: ERROR404</small>
         </div>
