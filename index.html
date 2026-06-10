@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ink & Investigations | Private Cases • Mystery • Investigation</title>
 
-    <meta name="description"
-        content="Ink & Investigations is preparing a new digital headquarters. Explore private investigations, mystery analysis, case reviews, and investigative storytelling.">
+    <meta name="description" content="Ink & Investigations is preparing a new digital headquarters. Explore private investigations, mystery analysis, case reviews, and investigative storytelling.">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* ==================================================
-           CSS VARIABLES
-        ================================================== */
-
+        /* CSS VARIABLES */
         :root {
             --bg: #1c1c1e;
             --surface: #2c2c2e;
@@ -42,19 +36,14 @@
             --container: 1200px;
         }
 
-        /* ==================================================
-           RESET
-        ================================================== */
-
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -74,18 +63,14 @@
             color: inherit;
         }
 
-        ul {
-            list-style: none;
-        }
+        ul { list-style: none; }
 
         .container {
             width: min(90%, var(--container));
             margin: auto;
         }
 
-        section {
-            padding: 100px 0;
-        }
+        section { padding: 100px 0; }
 
         h1,
         h2,
@@ -99,19 +84,14 @@
             margin-bottom: 20px;
         }
 
-        .section-header {
-            margin-bottom: 50px;
-        }
+        .section-header { margin-bottom: 50px; }
 
         .section-header p {
             max-width: 700px;
             color: var(--text-muted);
         }
 
-        /* ==================================================
-           PRELOADER
-        ================================================== */
-
+        /* PRELOADER */
         #preloader {
             position: fixed;
             inset: 0;
@@ -131,16 +111,9 @@
             animation: spin 1s linear infinite;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg); }}
 
-        /* ==================================================
-           HEADER
-        ================================================== */
-
+        /* HEADER */
         header {
             position: fixed;
             width: 100%;
@@ -151,13 +124,9 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .header-inner {
-            padding: 15px 0;
-        }
+        .header-inner { padding: 15px 0; }
 
-        .logo-wrap {
-            text-align: center;
-        }
+        .logo-wrap { text-align: center; }
 
         .logo {
             font-size: 2rem;
@@ -170,9 +139,7 @@
             color: var(--text-muted);
         }
 
-        nav {
-            margin-top: 15px;
-        }
+        nav { margin-top: 15px; }
 
         .nav-links {
             display: flex;
@@ -180,16 +147,11 @@
             gap: 35px;
         }
 
-        .nav-links a {
-            transition: var(--transition);
-        }
+        .nav-links a { transition: var(--transition); }
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+        .nav-links a:hover { color: var(--accent); }
 
         /* MOBILE MENU */
-
         .hamburger {
             display: none;
             cursor: pointer;
@@ -198,19 +160,13 @@
             top: 25px;
         }
 
-        /* ==================================================
-           HERO
-        ================================================== */
-
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
 
-            background:
-                linear-gradient(rgba(0,0,0,.65),
-                rgba(0,0,0,.75)),
-                url("https://picsum.photos/1920/1080?grayscale");
+            background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)), url("bg-standing.png");
 
             background-size: cover;
             background-position: center;
@@ -247,10 +203,7 @@
             transform: translateY(-2px);
         }
 
-        /* ==================================================
-           ALTERNATING SECTIONS
-        ================================================== */
-
+        /* ALTERNATING SECTIONS */
         .feature {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -269,14 +222,9 @@
             box-shadow: var(--shadow);
         }
 
-        .feature p {
-            color: var(--text-muted);
-        }
+        .feature p { color: var(--text-muted); }
 
-        /* ==================================================
-           NEWSLETTER
-        ================================================== */
-
+        /* NEWSLETTER */
         .newsletter {
             text-align: center;
             background: var(--surface);
@@ -303,10 +251,7 @@
             border: none;
         }
 
-        /* ==================================================
-           FAQ
-        ================================================== */
-
+        /* FAQ */
         .faq-item {
             background: var(--surface);
             margin-bottom: 15px;
@@ -329,18 +274,11 @@
             color: var(--text-muted);
         }
 
-        .faq-answer p {
-            padding: 0 20px 20px;
-        }
+        .faq-answer p { padding: 0 20px 20px; }
 
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
+        .faq-item.active .faq-answer { max-height: 200px; }
 
-        /* ==================================================
-           FOOTER
-        ================================================== */
-
+        /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
             padding: 30px 0;
@@ -359,14 +297,9 @@
             gap: 15px;
         }
 
-        .socials a:hover {
-            color: var(--accent);
-        }
+        .socials a:hover { color: var(--accent); }
 
-        /* ==================================================
-           BACK TO TOP
-        ================================================== */
-
+        /* BACK TO TOP */
         .back-to-top {
             position: fixed;
             right: 20px;
@@ -393,12 +326,8 @@
             visibility: visible;
         }
 
-        /* ==================================================
-           RESPONSIVE
-        ================================================== */
-
+        /* RESPONSIVE */
         @media(max-width:900px) {
-
             .feature,
             .feature:nth-child(even) {
                 grid-template-columns: 1fr;
@@ -408,16 +337,11 @@
                 order: 0;
             }
 
-            form {
-                flex-direction: column;
-            }
+            form { flex-direction: column; }
         }
 
         @media(max-width:768px) {
-
-            .hamburger {
-                display: block;
-            }
+            .hamburger { display: block; }
 
             .nav-links {
                 position: absolute;
@@ -441,28 +365,19 @@
         }
     </style>
 </head>
-
 <body>
-
     <!-- PRELOADER -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    <div id="preloader"><div class="loader"></div></div>
 
     <!-- HEADER -->
     <header>
         <div class="container header-inner">
-
             <div class="logo-wrap">
                 <div class="logo">Ink & Investigations</div>
-                <div class="tagline">
-                    Private Cases • Mystery • Investigation
-                </div>
+                <div class="tagline">Private Cases • Mystery • Investigation</div>
             </div>
 
-            <div class="hamburger">
-                <i data-lucide="menu"></i>
-            </div>
+            <div class="hamburger"><i data-lucide="menu"></i></div>
 
             <nav>
                 <ul class="nav-links">
@@ -473,130 +388,77 @@
                     <li><a href="#newsletter">Newsletter</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
     <!-- HERO -->
     <section class="hero">
         <div class="container hero-content">
-
             <h1>Coming Soon</h1>
-
-            <p>
-                Ink & Investigations is preparing a new digital headquarters
-                dedicated to private cases, mystery analysis, investigative
-                research, and professional case documentation.
-            </p>
-
-            <a href="#newsletter" class="btn">
-                Join the Investigation
-            </a>
-
+            <p>Ink & Investigations is preparing a new digital headquarters dedicated to private cases, mystery analysis, investigative research, and professional case documentation.</p>
+            <a href="#newsletter" class="btn">Join the Investigation</a>
         </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
         <div class="container">
-
             <div class="feature">
-
                 <div>
                     <h2>Built on Evidence</h2>
-                    <p>
-                        Every investigation begins with facts. Ink &
-                        Investigations is developing a professional platform
-                        where complex stories, private case reviews, and
-                        investigative findings can be presented with clarity,
-                        accuracy, and integrity.
-                    </p>
+                    <p>Every investigation begins with facts. Ink & Investigations is developing a professional platform where complex stories, private case reviews, and investigative findings can be presented with clarity, accuracy, and integrity.</p>
                 </div>
-
                 <div class="feature-image">
                     <div class="card-image">
-                        <img src="https://picsum.photos/700/500?random=1"
-                            alt="">
+                        <img src="footprint.png" alt="footprint investigation evidence">
                     </div>
                 </div>
-
             </div>
 
             <div class="feature">
-
                 <div>
                     <h2>Exploring Mysteries</h2>
-                    <p>
-                        From unusual incidents to unanswered questions, our
-                        future platform will explore mysteries through a
-                        structured investigative lens, emphasizing evidence,
-                        context, and responsible reporting.
-                    </p>
+                    <p>From unusual incidents to unanswered questions, our future platform will explore mysteries through a structured investigative lens, emphasizing evidence, context, and responsible reporting.</p>
                 </div>
-
                 <div class="feature-image">
                     <div class="card-image">
-                        <img src="https://picsum.photos/700/500?random=2"
-                            alt="">
+                        <img src="board.png" alt="mystery case detective board">
                     </div>
                 </div>
-
             </div>
 
             <div class="feature">
-
                 <div>
                     <h2>Case Documentation</h2>
-                    <p>
-                        Organized reports, investigative notes, timelines,
-                        evidence summaries, and analytical reviews will form the
-                        foundation of the Ink & Investigations archive.
-                    </p>
+                    <p>Organized reports, investigative notes, timelines, evidence summaries, and analytical reviews will form the foundation of the Ink & Investigations archive.</p>
                 </div>
-
                 <div class="feature-image">
                     <div class="card-image">
-                        <img src="https://picsum.photos/700/500?random=3"
-                            alt="">
+                        <img src="desk.png" alt="detective archives">
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
     <!-- NEWSLETTER -->
     <section id="newsletter" class="newsletter">
-
         <div class="container">
-
             <div class="section-header">
                 <h2>Stay Updated</h2>
-                <p>
-                    Subscribe to receive launch announcements, case updates,
-                    and exclusive investigative insights.
-                </p>
+                <p><center>Subscribe to receive launch announcements, case updates, and exclusive investigative insights.</center></p>
             </div>
 
             <form id="newsletterForm">
-                <input type="email"
-                    placeholder="Enter your email address"
-                    required>
-                <button class="btn" type="submit">
-                    Subscribe
-                </button>
+                <input type="email" placeholder="Enter your email address" required>
+                <button class="btn" type="submit">Subscribe</button>
             </form>
-
         </div>
-
     </section>
 
     <!-- FAQ -->
     <section id="faq">
-
         <div class="container">
-
             <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
             </div>
@@ -606,12 +468,8 @@
                     <span>When will the website launch?</span>
                     <i data-lucide="plus"></i>
                 </div>
-
                 <div class="faq-answer">
-                    <p>
-                        The official launch is currently in development.
-                        Subscribers will be the first to know.
-                    </p>
+                    <p>The official launch is currently in development. Subscribers will be the first to know.</p>
                 </div>
             </div>
 
@@ -620,12 +478,8 @@
                     <span>What content will be available?</span>
                     <i data-lucide="plus"></i>
                 </div>
-
                 <div class="faq-answer">
-                    <p>
-                        Investigative articles, case studies, mystery analysis,
-                        research reports, and professional documentation.
-                    </p>
+                    <p>Investigative articles, case studies, mystery analysis,research reports, and professional documentation.</p>
                 </div>
             </div>
 
@@ -634,126 +488,78 @@
                     <span>Can I submit a case?</span>
                     <i data-lucide="plus"></i>
                 </div>
-
                 <div class="faq-answer">
-                    <p>
-                        Submission details will be announced after launch.
-                    </p>
+                    <p>Submission details will be announced after launch.</p>
                 </div>
             </div>
-
         </div>
-
     </section>
 
     <!-- FOOTER -->
     <footer>
-
         <div class="container footer-inner">
-
-            <div>
-                © 2026 Ink & Investigations. All Rights Reserved.
-            </div>
+            <div>© 2026 Ink & Investigations. All Rights Reserved.</div>
 
             <div class="socials">
-
                 <a href="#"><i data-lucide="facebook"></i></a>
                 <a href="#"><i data-lucide="instagram"></i></a>
                 <a href="#"><i data-lucide="twitter"></i></a>
                 <a href="#"><i data-lucide="linkedin"></i></a>
-
             </div>
 
         </div>
-
     </footer>
 
     <!-- BACK TO TOP -->
-    <a href="#" class="back-to-top" id="topBtn">
-        <i data-lucide="arrow-up"></i>
-    </a>
+    <a href="#" class="back-to-top" id="topBtn"><i data-lucide="arrow-up"></i></a>
 
     <script>
-        /* ==========================================
-           Initialize Lucide Icons
-        ========================================== */
-
+        /* Initialize Lucide Icons */
         lucide.createIcons();
 
-        /* ==========================================
-           Preloader
-        ========================================== */
-
+        /* Preloader */
         window.addEventListener("load", () => {
             setTimeout(() => {
                 document.getElementById("preloader").style.display = "none";
             }, 700);
         });
 
-        /* ==========================================
-           Mobile Navigation
-        ========================================== */
+        /* Mobile Navigation */
+        const hamburger = document.querySelector(".hamburger");
 
-        const hamburger =
-            document.querySelector(".hamburger");
-
-        const navLinks =
-            document.querySelector(".nav-links");
+        const navLinks = document.querySelector(".nav-links");
 
         hamburger.addEventListener("click", () => {
             navLinks.classList.toggle("active");
         });
 
-        /* ==========================================
-           FAQ Accordion
-        ========================================== */
-
-        document
-            .querySelectorAll(".faq-item")
+        /* FAQ Accordion */
+        document.querySelectorAll(".faq-item")
             .forEach(item => {
-
                 item.addEventListener("click", () => {
                     item.classList.toggle("active");
                 });
-
             });
 
-        /* ==========================================
-           Back To Top
-        ========================================== */
-
-        const topBtn =
-            document.getElementById("topBtn");
+        /* Back To Top */
+        const topBtn = document.getElementById("topBtn");
 
         window.addEventListener("scroll", () => {
-
             if (window.scrollY > 400) {
                 topBtn.classList.add("show");
             } else {
                 topBtn.classList.remove("show");
             }
-
         });
 
-        /* ==========================================
-           Newsletter Demo
-        ========================================== */
-
-        document
-            .getElementById("newsletterForm")
+        /* Newsletter Demo */
+        document.getElementById("newsletterForm")
             .addEventListener("submit", function(e) {
-
                 e.preventDefault();
-
-                alert(
-                    "Thank you for subscribing to Ink & Investigations."
-                );
-
+                alert("Thank you for subscribing to Ink & Investigations.");
                 this.reset();
-
             });
     </script>
 
 </body>
-
 </html>
