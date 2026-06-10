@@ -379,6 +379,8 @@
                 padding: 20px 0;
             }
         }
+
+        .error-code { color: var(--text-muted); padding-top: 0.5rem; }
     </style>
 </head>
 <body>
@@ -414,9 +416,9 @@
             <h1>404</h1>
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
-            <a href="/" class="btn">Return Home</a>
-            <button onclick="history.back();" class="outlined-btn">Go Back</button>
-            <p>Error Code: INIA-404</p>
+            <a href="/" class="btn" style="margin-right: 0.25rem;">Return Home</a>
+            <a onclick="history.back();" class="outlined-btn">Go Back</a>
+            <p class="error-code"><small>Error Code: INIA-404</small></p>
         </div>
     </section>
 
