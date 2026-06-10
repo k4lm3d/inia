@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Ink & Investigations</title>
+
+    <meta name="description" content="The requested case file could not be located.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* CSS VARIABLES */
+        :root {
+            --bg: #1c1c1e;
+            --surface: #2c2c2e;
+            --surface-light: #353538;
+
+            --accent: #b87333;
+            --accent-dark: #935d28;
+
+            --text: #f5f0e8;
+            --text-muted: #bcb8b2;
+
+            --border: rgba(255, 255, 255, .08);
+
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+
+            --transition: .3s ease;
+            --container: 1200px;
+        }
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul { list-style: none; }
+
+        .container {
+            width: min(90%, var(--container));
+            margin: auto;
+        }
+
+        section { padding: 100px 0; }
+
+        h1,
+        h2,
+        h3,
+        .logo {
+            font-family: "Times New Roman", serif;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .section-header { margin-bottom: 50px; }
+
+        .section-header p {
+            max-width: 700px;
+            color: var(--text-muted);
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 70px;
+            height: 70px;
+            border: 4px solid rgba(255,255,255,.1);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); }}
+
+        /* HEADER */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(28, 28, 30, .92);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner { padding: 15px 0; }
+
+        .logo-wrap { text-align: center; }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: .85rem;
+            color: var(--text-muted);
+        }
+
+        nav { margin-top: 15px; }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        .nav-links a { transition: var(--transition); }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* MOBILE MENU */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+            top: 25px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+
+            background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)), url("bg-standing.png");
+
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .outlined-btn {
+            display: inline-block;
+            background: var(--accent-dark);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            border-color: var(--ascent);
+            border-style: solid;
+        }
+
+        .outlined-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ALTERNATING SECTIONS */
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .feature:nth-child(even) .feature-image {
+            order: -1;
+        }
+
+        .card-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .feature p { color: var(--text-muted); }
+
+        /* NEWSLETTER */
+        .newsletter {
+            text-align: center;
+            background: var(--surface);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            border-radius: 50px;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--surface);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: .4s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-answer p { padding: 0 20px 20px; }
+
+        .faq-item.active .faq-answer { max-height: 200px; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .socials a:hover { color: var(--accent); }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            width: 50px;
+            height: 50px;
+
+            background: var(--accent);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: var(--transition);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .feature,
+            .feature:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .feature:nth-child(even) .feature-image {
+                order: 0;
+            }
+
+            form { flex-direction: column; }
+        }
+
+        @media(max-width:768px) {
+            .hamburger { display: block; }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--surface);
+
+                flex-direction: column;
+                text-align: center;
+
+                max-height: 0;
+                overflow: hidden;
+                transition: .4s ease;
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader"><div class="loader"></div></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo-wrap">
+                <div class="logo">Ink & Investigations</div>
+                <div class="tagline">Private Cases • Mystery • Investigation</div>
+            </div>
+
+            <div class="hamburger"><i data-lucide="menu"></i></div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#services"">Services</a></li> -->
+                    <!-- <li><a href="#launch">Launch</a></li> -->
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-content">
+            <center><i data-lucide="search-x" style="font-size: 20px; color: var(--text);"></i></center>
+            <h1>404</h1>
+            <h2>Case File Missing</h2>
+            <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
+            <a href="/" class="btn">Return Home</a>
+            <button onclick="history.back()" class="outlined-btn">Go Back</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <div>© 2026 Ink & Investigations. All Rights Reserved.</div>
+
+            <div class="socials">
+                <a href="#"><i data-lucide="facebook"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="linkedin"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top" id="topBtn"><i data-lucide="arrow-up"></i></a>
+
+    <script>
+        /* Initialize Lucide Icons */
+        lucide.createIcons();
+
+        /* Preloader */
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("preloader").style.display = "none";
+            }, 700);
+        });
+
+        /* Mobile Navigation */
+        const hamburger = document.querySelector(".hamburger");
+
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        /* FAQ Accordion */
+        document.querySelectorAll(".faq-item")
+            .forEach(item => {
+                item.addEventListener("click", () => {
+                    item.classList.toggle("active");
+                });
+            });
+
+        /* Back To Top */
+        const topBtn = document.getElementById("topBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        });
+
+        /* Newsletter Demo */
+        document.getElementById("newsletterForm")
+            .addEventListener("submit", function(e) {
+                e.preventDefault();
+                alert("Thank you for subscribing to Ink & Investigations.");
+                this.reset();
+            });
+    </script>
+
+</body>
+  </html>
