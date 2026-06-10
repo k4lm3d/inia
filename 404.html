@@ -386,6 +386,11 @@
             justify-content: center;
             gap: 10px;
         }
+
+        .nav404-btn {
+            font-size: 18px;
+            width: 150px; 
+        }
         
         .error-code {
             color: var(--text-muted);
@@ -394,7 +399,7 @@
         }
 
         .icon404 {
-            font-size: 50px;
+            font-size: 30px;
             color: var(--text);
             padding-top: 1.5rem;
         }
@@ -434,8 +439,8 @@
             <h2>Case File Missing</h2>
             <p>Our investigators searched every archive, evidence locker, and classified record. Unfortunately, the page you're looking for cannot be found.</p>
             <div class="nav404">
-                <a href="/" class="btn" style="flex:1;">Return Home</a>
-                <button onclick="history.back();" class="outlined-btn" style="flex:2;">Go Back</button>
+                <a href="/" class="btn nav404-btn" style="flex:1;">Return Home</a>
+                <button onclick="history.back();" class="outlined-btn nav404-btn" style="flex:2;">Go Back</button>
             </div>
             <small class="error-code">Error Code: INI-404</small>
         </div>
